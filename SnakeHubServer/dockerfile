@@ -5,6 +5,7 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY ["SnakeHubServer.csproj", ""]
+COPY ["appsettings.Production.json", ""]
 RUN dotnet restore "SnakeHubServer.csproj"
 COPY . .
 WORKDIR "/src"
