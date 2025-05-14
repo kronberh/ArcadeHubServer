@@ -26,7 +26,7 @@ namespace SnakeHubServer.Controllers
                 {
                     if (_userManager.Users.Count() == 1)
                     {
-                        await _userManager.AddToRoleAsync(user, "admin");
+                        await _userManager.AddToRoleAsync(user, "ADMIN");
                     }
                     return Ok(new { Token = await _jwt.GenerateJwtTokenAsync(user) });
                 }

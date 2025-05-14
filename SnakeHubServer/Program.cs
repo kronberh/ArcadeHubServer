@@ -82,9 +82,9 @@ namespace SnakeHubServer
                 try
                 {
                     RoleManager<IdentityRole> roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-                    if (!await roleManager.RoleExistsAsync("admin"))
+                    if (!await roleManager.RoleExistsAsync("ADMIN"))
                     {
-                        await roleManager.CreateAsync(new IdentityRole("admin"));
+                        await roleManager.CreateAsync(new IdentityRole("ADMIN"));
                     }
                 }
                 catch (Exception ex)
